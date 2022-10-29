@@ -1,0 +1,105 @@
+
+*{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding:0;
+}
+
+.container{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 2fr 10fr;
+}
+
+.admin-menu{
+    background-color: #4e73df;
+    padding: 15px;
+}
+
+.admin-corpo{
+    background-color: #cccccc;
+    overflow-y: scroll;
+    padding: 15px;
+}
+
+nav ul{
+    padding: 5px;    
+}
+
+nav ul li{
+    list-style-type: none;
+    padding: 6px 10px;
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color:#FFF;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover{
+    font-weight: bolder;
+}
+
+.admin-logo{
+    font-size: 1.3rem;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.admin_logout{
+    color: #FFF;
+    font-size: 1.2rem;
+    display: grid;
+
+}
+
+.admin_logout i {
+    cursor: pointer;
+}
+
+.menu-ativo{
+    font-weight: bolder;
+}
+
+.grid-professores{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+
+.grid-professores input{
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+}
+
+.btn-cadastrar{
+    padding: 6px 10px;
+    background-color: #4e73df;
+    border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.input-cep{
+    width: 90% !important;
+}
+
+.btn-cep{
+    width: 9% !important;
+    padding: 6px 10px;
+    border: none;
+    background-color: #4e73df;
+    cursor: pointer;
+
+}
+

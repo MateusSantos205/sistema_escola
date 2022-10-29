@@ -1,41 +1,44 @@
 <?php
-    
-try {
-    include 'include/conexao.php';
 
+include_once "include/conexao.php";
+
+try{
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    // BINARY ativa o case sensitive
-    $sql = "SELECT email,senha FROM tb_usuarios WHERE email= '$email' AND BINARY senha='$senha'";
+    $sql = "SELECT 
+                email 
+            FROM 
+                tb_usuarios 
+            WHERE 
+                email='$email' 
+            AND 
+                BINARY
+                senha = '$senha'
+            AND 
+                ativo = 1
+                
+            ";
 
-    $comando = $conexao->prepare($sql);
+    $comando = $con->prepare($sql);
+
     $comando->execute();
 
     $dados = $comando->fetchAll(PDO::FETCH_ASSOC);
 
-// se o usuario e senha estiverem corretos
-    if($dados !=null){
+   
+    if($dados != null){
         session_start();
-
-        // cria uma var de sessao email e atribui valor
-        $_SESSION['email']=$email;
-
-        // monta um array para ser convertido em JSON
-        $retorno = array("retorno"=> "ok","mensagem"=> "Login efetuado com sucesso!");
+        $_SESSION['email'] = $email;
+        
+        $retorno = array("retorno"=>"ok","mensagem"=>"Login realizado com sucesso!"); 
     }else{
-        $retorno = array("retorno"=> "erro","mensagem"=> "Dados inválidos!");
+        $retorno = array("retorno"=>"erro","mensagem"=>"Dados inválidos!");
     }
-    
-} catch (PDOException $erro) {
 
-    $retorno = array("retorno"=> "erro","mensagem"=> $erro->getMessage());
-
+}catch(PDOException $erro){
+    $retorno = array("retorno"=>"erro","mensagem"=>$erro->getMessage());
 }
 
 $json = json_encode($retorno,JSON_UNESCAPED_UNICODE);
 echo $json;
-
-$con=null;
-    
-?>

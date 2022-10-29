@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Escola - Login</title>
-    <link rel="stylesheet" href="assets/css/style-login.css">
+    <link rel="stylesheet" href="assets/css/estilo-login.css">
 </head>
-
 <body>
-
     <div class="container">
-
         <form id="form-login">
+            <!-- <i class="fa-solid fa-user-lock fa-2x h1-login"></i> -->
+            <h1 class="h1-login">Sistema de Gestão Escolar</h1>
+            
+            
             <div>
                 <label for="email">E-mail</label>
-                <input class="input-login" type="text" name="email" id="email">
+                <input class="input-login" type="email" name="email" id="email">
             </div>
-
             <div>
                 <label for="senha">Senha</label>
                 <input class="input-login" type="password" name="senha" id="senha">
             </div>
-            <button type="button" class="btn-login" onclick="validaLogin()">Entrar</button>
+            <button type="button" class="btn-login" onclick="validaLogin()">Login</button>
+
         </form>
-
-    </div>
-
-    <!-- JQUERY -->
+    </div> 
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <!--  -->
-    <script src="assets/js/script-login.js"></script>
-</body>
+    <script src="https://kit.fontawesome.com/d1a9a58100.js" crossorigin="anonymous"></script>
 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="assets/js/script-login.js"></script>   
+</body>
 </html>

@@ -1,15 +1,15 @@
 <?php
 
 // controle de sessãp
-session_start();
+// session_start();
 
 
 // isset verifica de uma var existe
 // se a var sessão email nao estiver setada o usuario sera redirecionado para o login / somente é permitido acesso a essa pagina se a sessao foi iniciada
 
-if (!isset($_SESSION['email'])) {
-    header('location: ../');
-}
+// if (!isset($_SESSION['email'])) {
+//     header('location: ../');
+// }
 
 ?>
 
@@ -71,6 +71,8 @@ if (!isset($_SESSION['email'])) {
                             <input type="text" name="nome" id="nome">
                         </div>
 
+                        
+
                         <div>
                             <label for="email">email</label>
                             <input type="email" name="email" id="email">
@@ -84,6 +86,19 @@ if (!isset($_SESSION['email'])) {
                         <div>
                             <label for="cpf">CPF</label>
                             <input type="text" name="cpf" id="cpf">
+                        </div>
+
+                        <div>
+                            <label for="data_nascimento">Data de Nascimento</label>
+                            <input type="date" name="data_nascimento" id="data_nascimento">
+                        </div>
+
+                        <div>
+                            <label for="tipo">Tipo</label>
+                            <select name="tipo" id="tipo">
+                                <option value="" disabled selected>Selecione...</option>
+                                
+                            </select>
                         </div>
 
                         <div>
@@ -158,9 +173,11 @@ if (!isset($_SESSION['email'])) {
                             <input type="text" name="complemento" id="complemento">
                         </div>
 
+                        </fieldset>
+
 
                     </div>
-                    <button class="btn-cadastrar" type="button" onclick="addProfessor()">Cadastrar</button>
+                    <button class="btn-cadastrar" type="button" onclick="addUsuarios()">Cadastrar</button>
 
 
                 </form>

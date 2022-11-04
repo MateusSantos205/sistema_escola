@@ -10,7 +10,6 @@ try{
     $telefone = str_replace($limpa,'',$_POST['telefone']);
     $cpf = str_replace($limpa,'',$_POST['cpf']);
     $data_nascimento = $_POST['data_nascimento'];
-    $tipo = $_POST['tipo'];
 
     // endereço
 
@@ -21,6 +20,16 @@ try{
     $estado = $_POST['estado'];
     $cidade = $_POST['cidade'];
     $complemento = $_POST['complemento'];
+
+    if(!isset($_POST['tipo'])){
+
+        $retorno = array("retorno"=>"erro","mensagem"=>"Escolha o tipo do cadastro");
+        $json = json_encode($retorno, JSON_UNESCAPED_UNICODE);
+        echo $json;
+        exit;
+    }else{
+        $tipo = $_POST['tipo'];
+    }
 
     // converte a data para o formato 01-10-2000
     // $senha = implode('-', array_reverse(explode('-', $data_nascimento)));

@@ -85,7 +85,7 @@ const addUsuarios = () => {
     .then((response)=>response.json())
     .then((result)=>{
         // aqui tratamos o resultado do backend
-        if(result.retorno){
+        if(result.retorno == 'ok'){
             Swal.fire({
                 icon: 'success',
                 title: 'Sucesso!',

@@ -96,7 +96,7 @@
                         <div>
                             <label for="tipo">Tipo</label>
                             <select name="tipo" id="tipo">
-                                <option value="" disabled selected>Selecione...</option>
+                                <option value="tipo" disabled selected>Selecione...</option>
                                 
                             </select>
                         </div>

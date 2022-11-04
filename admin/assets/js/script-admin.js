@@ -76,15 +76,31 @@ const listaTipo = () => {
 }
 
 const addUsuarios = () => {
-    let dados = new FormData($('form-professores'))
+    let dados = new FormData($('#form-professores')[0])
 
-    const result = fetch('../backend/addusuarios.php',{
+    const result = fetch('../backend/addUsuarios.php',{
         method: 'POST',
         body:dados
     })
     .then((response)=>response.json())
     .then((result)=>{
         // aqui tratamos o resultado do backend
+        if(result.retorno){
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso!',
+                text: result.mensagem
+            })
+            $("#form-professores").reset()
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Atenção!',
+                text: result.mensagem
+            })
+        }
     })
+
+    
 
 }

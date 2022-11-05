@@ -78,29 +78,72 @@ const listaTipo = () => {
 const addUsuarios = () => {
     let dados = new FormData($('#form-professores')[0])
 
-    const result = fetch('../backend/addUsuarios.php',{
+    const result = fetch('../backend/addUsuarios.php', {
+            method: 'POST',
+            body: dados
+        })
+        .then((response) => response.json())
+        .then((result) => {
+            // aqui tratamos o resultado do backend
+            if (result.retorno == 'ok') {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: result.mensagem
+                })
+                $("#form-professores").reset()
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Atenção!',
+                    text: result.mensagem
+                })
+            }
+        })
+
+
+
+}
+
+// funçao que exibe a aba cadastro e oculta a aba listagem
+const abaCadastro = () => {
+    // oculta a div de listagem
+    $('#div-listagem').hide()
+
+    // exibe a div de cadastro
+    $('#form-professores').show()
+}
+
+// funçao que exibe a aba cadastro e oculta a aba cadastro
+const abaListagem = () => {
+    $('#form-professores').hide()
+
+    // exibe a div de listagem
+    $('#div-listagem').show()
+}
+
+const pesquisarUsuario = () => {
+    // validação campo pesquisar vazio
+
+    let pesquisar = $('#pesquisar').val()
+
+    if (pesquisar == '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Atenção!',
+            text: 'Digite um nome ou CPF para pesquisar!'
+        });
+        return
+    }
+
+    dados = new FormData($('#form-listagem')[0])
+
+    result = fetch('../backend/pesquisarUsuario.php',{
         method: 'POST',
-        body:dados
+        body: dados
     })
-    .then((response)=>response.json())
+    .then((qresponse)=>response.json())
     .then((result)=>{
-        // aqui tratamos o resultado do backend
-        if(result.retorno == 'ok'){
-            Swal.fire({
-                icon: 'success',
-                title: 'Sucesso!',
-                text: result.mensagem
-            })
-            $("#form-professores").reset()
-        }else{
-            Swal.fire({
-                icon: 'error',
-                title: 'Atenção!',
-                text: result.mensagem
-            })
-        }
+        // aqui iremos exibir os dados encontrados na pesquisa na tela
     })
-
-    
-
 }

@@ -112,6 +112,15 @@ const abaCadastro = () => {
 
     // exibe a div de cadastro
     $('#form-professores').show()
+
+    // REMOVE A CLASSE TAB-ATIVO DA ABA CADASTRO USANDO JQUERY --------------
+
+    $('#aba-listagem').removeClass('tab-ativo')
+
+    // ADD A CLASSE TAB-ATIVO DA ABA LISTAGEM USANDO JQUERY -----------------
+
+    $('#aba-cadastro').addClass('tab-ativo')
+
 }
 
 // funçao que exibe a aba cadastro e oculta a aba cadastro
@@ -120,8 +129,19 @@ const abaListagem = () => {
 
     // exibe a div de listagem
     $('#div-listagem').show()
+
+    // REMOVE A CLASSE TAB-ATIVO DA ABA CADASTRO USANDO JQUERY -----------------
+
+    $('#aba-cadastro').removeClass('tab-ativo')
+
+    // ADD A CLASSE TAB-ATIVO DA ABA LISTAGEM USANDO JQUERY --------------
+
+    $('#aba-listagem').addClass('tab-ativo')
+
 }
 
+
+// pesquisar
 const pesquisarUsuario = () => {
     // validação campo pesquisar vazio
 

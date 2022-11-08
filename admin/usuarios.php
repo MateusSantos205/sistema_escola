@@ -19,11 +19,11 @@
             <div class="div-professores">
 
                 <div class="tabs">
-                    <div class="titulo-principal tab-ativo" onclick="abaCadastro()">
+                    <div id="aba-cadastro" class="titulo-principal tab-ativo" onclick="abaCadastro()">
                         <p class="titulo-texto">Cadastro de Usuários</p>
                     </div>
 
-                    <div class="titulo-principal" onclick="abaListagem()">
+                    <div id="aba-listagem" class="titulo-principal" onclick="abaListagem()">
                         <p class="titulo-texto">Listagem</p>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ include_once "include/conexao.php";
 
 try{
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $senha = sha1($_POST['senha']);
 
     $sql = "SELECT 
                 email 

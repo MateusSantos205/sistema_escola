@@ -1,62 +1,18 @@
 <?php
+ include 'include/controle-sessao.php';
+?>
 
-// controle de sessãp
-// session_start();
+<?php
 
-
-// isset verifica de uma var existe
-// se a var sessão email nao estiver setada o usuario sera redirecionado para o login / somente é permitido acesso a essa pagina se a sessao foi iniciada
-
-// if (!isset($_SESSION['email'])) {
-//     header('location: ../');
-// }
+        include 'include/header.php';
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Sistema Escola</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/css/style-admin.css">
-</head>
-
-<body>
-    <div class="container">
-        <aside class="admin-menu">
-            <div class="admin-logo">Sistema - ADMIN</div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="index.php" class="menu-ativo"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-                    </li>
-
-                    <li>
-                        <a href="professores.php"><i class="fa-solid fa-chalkboard-user"></i> Professores</a>
-                    </li>
-                    <li>
-                        <a href="alunos.php"><i class="fa-solid fa-graduation-cap"></i> Alunos</a>
-                    </li>
-                    <li>
-                        <a href="notas.php"><i class="fa-solid fa-file"></i> Notas</a>
-                    </li>
-
-                    <hr>
-
-                    <li>
-                        <a href="../backend/logout.php"><i class="fa-solid fa-power-off"></i> Sair </a>
-                    </li>
-                </ul>
-
-            </nav>
-
-            <!-- <div class="admin_logout"> 
-            </div> -->
-
-        </aside>
+        <!-- ASIDE -->
+        <?php
+            include 'include/aside.php';
+        ?>
+    <!-- FINAL ASIDE -->
 
         <!-- aqui sera o conteudo da pag -->
         <main class="admin-corpo">
@@ -219,15 +175,9 @@
             </fieldset>
 
         </main>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <!--  -->
-    <script src="assets/js/jquery.inputmask.min.js"></script>
-    <!--  -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <!--  -->
-    <script src="https://kit.fontawesome.com/d1a9a58100.js" crossorigin="anonymous"></script>
-    <script src="assets/js/script-admin.js"></script>
-</body>
+    
+         <!-- footer -->
 
-</html>
+         <?php
+            include 'include/footer.php';
+        ?>

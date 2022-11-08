@@ -153,7 +153,7 @@
                                 <div>
                                     <label for="">Pesquisar Usuários</label>
                                     <div class="div-cep">
-                                        <input class=" input-cep" type="text" name="pesquisar" id="pesquisar">
+                                        <input class=" input-cep" type="text" name="pesquisar" id="pesquisar" placeholder="Digite um nome ou CPF">
                                         <button class="btn-cep" type="button" onclick="pesquisarUsuario()"><i class="fa-solid fa-magnifying-glass"></i></button>
                                     </div>
                                 </div>

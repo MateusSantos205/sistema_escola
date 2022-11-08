@@ -188,7 +188,9 @@
                         </div>
                         <button class="btn-cadastrar" type="button" onclick="addUsuarios()">Cadastrar</button>
 
-                        <div id="div-listagem">
+                    </form>
+
+                    <div id="div-listagem">
                             <h4>Listagem de Usuários</h4>
 
                             <form id="form-listagem">
@@ -199,17 +201,15 @@
                                         <button class="btn-cep" type="button" onclick="pesquisarUsuario()"><i class="fa-solid fa-magnifying-glass"></i></button>
                                     </div>
                                 </div>
-                            </form>
+                            </form> 
 
                             <div id="resultado-listagem">
+
+                            
                                 
                             </div>
 
                         </div>
-
-
-
-                    </form>
 
 
                 </fieldset>
